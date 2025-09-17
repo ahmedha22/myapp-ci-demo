@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -19,17 +19,17 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore
-        working-directory: myapp
+        working-directory: Myapp
 
       - name: Build
         run: dotnet build --no-restore --configuration Release
-        working-directory: myapp
+        working-directory: Myapp
 
       - name: Test
         run: dotnet test --no-build --verbosity normal
-        working-directory: myapp
+        working-directory: Myapp
 
       - name: Publish
         run: dotnet publish -c Release -o ./publish
-        working-directory: myapp
+        working-directory: Myapp
 
